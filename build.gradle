@@ -8,12 +8,6 @@ group = 'me.dio'
 version = '0.0.1-SNAPSHOT'
 description = 'Java RESTful API criada durante o Bootcamp Santander'
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
-}
-
 repositories {
 	mavenCentral()
 }

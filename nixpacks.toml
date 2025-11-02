@@ -1,2 +1,5 @@
 [phases.setup]
 nixPkgs = ["openjdk17"]
+
+[phases.build]
+cmds = ["java -version", "./gradlew clean build -x check -x test -Pproduction"]
