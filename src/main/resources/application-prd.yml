@@ -7,4 +7,4 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: validate
-      # create somente na primeira execução
+      # create somente na primeira execução, após troca por validate
