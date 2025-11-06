@@ -8,7 +8,7 @@ API RESTful desenvolvida em Java durante o Bootcamp Santander, implementando um 
 - [Tecnologias](#-tecnologias)
 - [Arquitetura](#-arquitetura)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Funcionalidades](#funcionalidades)
+- [Funcionalidades](#%EF%B8%8F-funcionalidades)
 - [Regras de Negócio](#-regras-de-negócio)
 - [Diagrama de Classes](#-diagrama-de-classes)
 - [Pré-requisitos](#-pré-requisitos)
