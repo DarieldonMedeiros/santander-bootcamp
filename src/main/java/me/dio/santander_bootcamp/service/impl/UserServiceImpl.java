@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import static java.util.Optional.ofNullable;
 
@@ -39,14 +38,14 @@ public class UserServiceImpl implements UserService {
     public User create(User userToCreate) {
         ofNullable(userToCreate).orElseThrow(() -> new BusinessException("User to create must not be null."));
         ofNullable(userToCreate.getAccount()).orElseThrow(() -> new BusinessException("User account must not be null."));
-        ofNullable(userToCreate.getCard()).orElseThrow(() -> new BusinessException("User card must not be null"));
+        ofNullable(userToCreate.getCard()).orElseThrow(() -> new BusinessException("User card must not be null."));
 
         this.validateChangeableId(userToCreate.getId(), "created");
         if(userRepository.existsByAccountNumber(userToCreate.getAccount().getNumber())){
-            throw new BusinessException("This account number already exists");
+            throw new BusinessException("This account number already exists.");
         }
         if(userRepository.existsByCardNumber(userToCreate.getCard().getNumber())){
-            throw new BusinessException("This card number already exists");
+            throw new BusinessException("This card number already exists.");
         }
 
         return this.userRepository.save(userToCreate);
@@ -57,7 +56,7 @@ public class UserServiceImpl implements UserService {
         this.validateChangeableId(id, "updated");
         User dbUser = this.findById(id);
         if(!dbUser.getId().equals(userToUpdate.getId())){
-            throw new BusinessException("Update IDs must be the same");
+            throw new BusinessException("Update IDs must be the same.");
         }
 
         dbUser.setName(userToUpdate.getName());
